@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <title>GymApp</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- 🔹 PWA Support -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="GymApp">
+  <link rel="apple-touch-icon" href="icon.png">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="app-header">
+    <h1>🏋️ WorkoutApp</h1>
+  </header>
+
+  <!-- CONTENUTO PRINCIPALE -->
+  <main class="main-container">
+    <iframe
+      id="page-frame"
+      src="home.html"
+      frameborder="0"
+      scrolling="yes"
+    ></iframe>
+  </main>
+
+  <!-- NAV BAR INFERIORE -->
+  <nav class="tab-bar">
+    <div class="tab active" data-page="home.html">
+      <span>🏠</span><p>Home</p>
+    </div>
+    <div class="tab" data-page="sessione.html">
+      <span>📋</span><p>Schede</p>
+    </div>
+    <div class="tab" data-page="timer.html">
+      <span>⏱️</span><p>Timer</p>
+    </div>
+    <div class="tab" data-page="progressi.html">
+      <span>📈</span><p>Progressi</p>
+    </div>
+    <div class="tab" data-page="massimali.html">
+      <span>💪🏼</span><p>Massimali</p>
+    </div>
+  </nav>
+
+  <!-- SCRIPT PRINCIPALE -->
+  <script src="app.js"></script>
+
+  <!-- 🔹 Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('✅ Service Worker registrato con successo'))
+          .catch(err => console.error('❌ Errore Service Worker:', err));
+      });
+    }
+  </script>
+</body>
+</html>

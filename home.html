@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <title>Home - GymApp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main id="homeContainer">
+
+    <!-- Saluto -->
+    <div class="card" style="text-align:center;">
+      <h2 id="welcomeMessage">Ogni serie conta... Fallo per te...</h2>
+      <p id="todayDate"></p>
+    </div>
+
+    <!-- Ultimo allenamento -->
+    <div class="card" id="lastWorkoutCard">
+      <h3>🏋️ Ultimo allenamento</h3>
+      <p id="lastWorkoutInfo">Nessun allenamento registrato</p>
+    </div>
+
+    <!-- Mini statistiche -->
+    <div class="card" id="statsCard">
+      <h3>📈 Statistiche veloci</h3>
+      <p id="totalSessions">Sessioni totali: 0</p>
+      <p id="totalVolume">Peso totale sollevato: 0 kg</p>
+    </div>
+
+    <!-- Pulsante principale -->
+    <button id="startWorkoutBtn" class="btn red big">🔥 Inizia Allenamento</button>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

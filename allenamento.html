@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <title>Allenamento Guidato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main id="guidedWorkout" class="workout-container">
+    <h1 class="page-title">💪 Allenamento Guidato</h1>
+
+    <div class="card workout-card">
+      <h2 id="exerciseName">—</h2>
+      <p id="exerciseInfo">Caricamento esercizio...</p>
+      <p id="setCounter"></p>
+
+      <div class="input-group">
+        <label for="currentWeight">Carico attuale (kg)</label>
+        <input type="number" id="currentWeight" placeholder="Peso (kg)" min="0" inputmode="decimal">
+      </div>
+
+      <div class="timer-box">
+        <div id="timerDisplay" class="timer-display">--:--</div>
+      </div>
+
+      <div class="button-group">
+        <button id="startRestBtn" class="btn red-outline">⏱️ Pausa</button>
+        <button id="completeSetBtn" class="btn red">✅ Serie completata</button>
+      </div>
+    </div>
+
+    <p class="tip-text">Registra ogni serie e aggiorna il peso quando necessario.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

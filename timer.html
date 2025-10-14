@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h2>⏱️ Timer</h2></header>
+<main>
+  <div class="card">
+    <input id="restTime" type="number" placeholder="Secondi" value="90">
+    <button id="startTimer">Avvia Timer</button>
+    <div class="timer-display" id="timerDisplay">--:--</div>
+  </div>
+
+  <!-- Audio per allarme -->
+  <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

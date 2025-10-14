@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h2>📅 Calendario Settimanale</h2></header>
+<main>
+  <div class="card">
+    <label for="daySelect">Giorno:</label>
+    <select id="daySelect">
+      <option value="lun">Lunedì</option>
+      <option value="mar">Martedì</option>
+      <option value="mer">Mercoledì</option>
+      <option value="gio">Giovedì</option>
+      <option value="ven">Venerdì</option>
+      <option value="sab">Sabato</option>
+      <option value="dom">Domenica</option>
+    </select>
+
+    <label for="sessionSelect">Sessione:</label>
+    <select id="sessionSelect"></select>
+
+    <button id="saveScheduleBtn">💾 Salva</button>
+  </div>
+
+  <div class="card">
+    <h3>📌 Allenamenti della settimana</h3>
+    <ul id="calendarList"></ul>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
