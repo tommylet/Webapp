@@ -391,6 +391,59 @@ welcomeEl.textContent = randomQuote;
     }
   }
 
+// --- TIMER SINGOLO CON ALLARME E VIBRAZIONE ---
+const startTimerBtn = document.getElementById("startTimer");
+
+if (startTimerBtn) {
+  const display = document.getElementById("timerDisplay");
+  const input = document.getElementById("restTime");
+  const audio = document.getElementById("alarmSound");
+
+  let timerInterval;
+
+  function updateDisplay(sec) {
+    const m = String(Math.floor(sec / 60)).padStart(2, "0");
+    const s = String(sec % 60).padStart(2, "0");
+    display.textContent = `${m}:${s}`;
+  }
+
+  startTimerBtn.onclick = () => {
+    clearInterval(timerInterval);
+    let sec = parseInt(input.value);
+
+    if (isNaN(sec) || sec <= 0) {
+      alert("Inserisci un numero di secondi valido!");
+      return;
+    }
+
+    updateDisplay(sec);
+    startTimerBtn.disabled = true;
+
+    timerInterval = setInterval(() => {
+      sec--;
+      updateDisplay(sec);
+
+      if (sec <= 0) {
+        clearInterval(timerInterval);
+        startTimerBtn.disabled = false;
+        display.textContent = "00:00";
+        alert("⏱️ Pausa terminata!");
+
+        // vibrazione
+        if (navigator.vibrate) {
+          navigator.vibrate([300, 200, 300]);
+        }
+
+        // suono
+        if (audio) {
+          audio.currentTime = 0;
+          audio.play().catch(e => console.log("Audio non riprodotto:", e));
+        }
+      }
+    }, 1000);
+  };
+}
+
 // --- Helpers ---
 function format(sec){
   const m=String(Math.floor(sec/60)).padStart(2,"0");
