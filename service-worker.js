@@ -1,4 +1,4 @@
-const CACHE_NAME = "gymapp-cache-v2";
+const CACHE_NAME = "gymapp-cache-v1";
 const FILES_TO_CACHE = [
   "./index.html",
   "./home.html",
